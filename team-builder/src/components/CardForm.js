@@ -3,9 +3,9 @@ import { useState } from 'react';
 
 const CardForm = props =>{
     const [card, setCard] = useState({name: "", role: "", email: ""});
-
+    console.log(card);
     const changeHandler = event =>{
-        setCard({...NodeIterator, [event.target.name]: event.target.value});
+        setCard({...card, [event.target.name]: event.target.value});
     };
 
     const submitCard = event => {
@@ -15,31 +15,34 @@ const CardForm = props =>{
             id:Date.now()
         };
         props.addNewCard(newCard);
-        setCard({name: "", role: "", email: ""})
+        setCard({
+        name: "",
+        role: "",
+        email: ""})
     }
 
     return(
             <form onSubmit={submitCard}>
-                <label htmlFor="Name">Hello, My name is </label>
+                <label htmlFor="name">Hello, My name is </label>
                 <input 
                 type="text" 
-                name="Name" 
+                name="name" 
                 placeholder="Name Here"
                 value={card.name}
                 onChange={changeHandler}/>
 
-                <label htmlFor="Role">. My role at this company is </label>
+                <label htmlFor="role">. My role at this company is </label>
                 <input 
                 type="text" 
-                name="Role" 
+                name="role" 
                 placeholder="Job Title" 
                 value={card.role}
                 onChange={changeHandler}/>
 
-                <label htmlFor="Email"> and you can email me at </label>
+                <label htmlFor="email"> and you can email me at </label>
                 <input 
                 type="email" 
-                name="Email" 
+                name="email" 
                 placeholder="Email" 
                 value={card.email}
                 onChange={changeHandler}/>
