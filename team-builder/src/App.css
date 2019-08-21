@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Hepta+Slab&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Hepta Slab', serif;
 }
 
 .App-logo {
@@ -30,4 +33,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h1,h2,h3 {
+font-family: 'Arimo', sans-serif;
 }
