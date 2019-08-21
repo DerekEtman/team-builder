@@ -7,7 +7,7 @@ const CardForm = props =>{
     const changeHandler = event =>{
         setCard({...NodeIterator, [event.target.name]: event.target.value});
     };
-    
+
     const submitCard = event => {
         event.preventDefault();
         const newCard = {
@@ -19,7 +19,6 @@ const CardForm = props =>{
     }
 
     return(
-        <div>
             <form onSubmit={submitCard}>
                 <label htmlFor="Name">Hello, My name is </label>
                 <input 
@@ -39,7 +38,7 @@ const CardForm = props =>{
 
                 <label htmlFor="Email"> and you can email me at </label>
                 <input 
-                type="Email" 
+                type="email" 
                 name="Email" 
                 placeholder="Email" 
                 value={card.email}
@@ -47,7 +46,6 @@ const CardForm = props =>{
 
                 <button type="submit">Looks good, Save it!</button>
             </form>
-        </div>
     );
 };
 
